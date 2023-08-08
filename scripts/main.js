@@ -1,6 +1,7 @@
 import { getColors } from "./color.js";
 import { getInteriors } from "./interior.js";
 import { getTech } from "./tech.js";
+import { getWheels } from "./wheels.js";
 
 const container = document.querySelector("#container");
 
@@ -8,6 +9,7 @@ const render = async () => {
   const colorHTML = await getColors();
   const interiorHTML = await getInteriors();
   const techHTML = await getTech();
+  const wheelHTML = await getWheels();
 
   const outputHTML = `
         <h1> CARS-R-US </h1>
@@ -22,7 +24,7 @@ const render = async () => {
                 ${techHTML}
             </section>
             <section class="choices__wheels">
-                CONTENT
+                ${wheelHTML}
             </section>
 `;
   container.innerHTML = outputHTML;
