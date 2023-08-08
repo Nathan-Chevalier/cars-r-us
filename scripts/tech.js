@@ -2,7 +2,7 @@ import { setTech } from "./transient.js";
 
 export const getTech = async () => {
   document.addEventListener("change", techChange);
-  const response = await fetch("http://localhost:8088/tech");
+  const response = await fetch("http://localhost:8088/packages");
   const techs = await response.json();
 
   let html = `<h3> Choose Your Tech Package </h3>

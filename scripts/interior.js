@@ -2,7 +2,7 @@ import { setInterior } from "./transient.js";
 
 export const getInteriors = async () => {
   document.addEventListener("change", interiorChange);
-  const response = await fetch("http://localhost:8088/interior");
+  const response = await fetch("http://localhost:8088/interiors");
   const interiors = await response.json();
 
   let html = `<h3> Choose Your Interior! </h3>
