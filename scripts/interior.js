@@ -1,4 +1,7 @@
+import { setInterior } from "./transient.js";
+
 export const getInteriors = async () => {
+  document.addEventListener("change", interiorChange);
   const response = await fetch("http://localhost:8088/interior");
   const interiors = await response.json();
 
@@ -11,4 +14,11 @@ export const getInteriors = async () => {
   html += interiorArray.join("");
   html += `</select>`;
   return html;
+};
+
+const interiorChange = (changeEvent) => {
+  if (changeEvent.target.id === "interior_choice") {
+    const converted = parseInt(changeEvent.target.value);
+    setInterior(converted);
+  }
 };

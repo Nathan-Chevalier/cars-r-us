@@ -1,4 +1,7 @@
+import { setTech } from "./transient.js";
+
 export const getTech = async () => {
+  document.addEventListener("change", techChange);
   const response = await fetch("http://localhost:8088/tech");
   const techs = await response.json();
 
@@ -11,4 +14,11 @@ export const getTech = async () => {
   html += techArray.join("");
   html += `</select>`;
   return html;
+};
+
+const techChange = (changeEvent) => {
+  if (changeEvent.target.id === "tech_choice") {
+    const converted = parseInt(changeEvent.target.value);
+    setTech(converted);
+  }
 };

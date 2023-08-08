@@ -1,4 +1,7 @@
+import { setColor } from "./transient.js";
+
 export const getColors = async () => {
+  document.addEventListener("change", colorChange);
   const response = await fetch("http://localhost:8088/color");
   const colors = await response.json();
 
@@ -11,4 +14,11 @@ export const getColors = async () => {
   html += colorArray.join("");
   html += `</select>`;
   return html;
+};
+
+const colorChange = (changeEvent) => {
+  if (changeEvent.target.id === "color_choice") {
+    const converted = parseInt(changeEvent.target.value);
+    setColor(converted);
+  }
 };
