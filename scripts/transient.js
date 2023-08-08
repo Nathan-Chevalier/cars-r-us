@@ -2,7 +2,7 @@ const transientState = {
   id: 0,
   colorId: 0,
   interiorId: 0,
-  techId: 0,
+  packageId: 0,
   wheelsId: 0,
   timestamp: 0,
 };
@@ -18,11 +18,26 @@ export const setInterior = (chosenInterior) => {
 };
 
 export const setTech = (chosenTech) => {
-  transientState.techId = chosenTech;
+  transientState.packageId = chosenTech;
   console.log(transientState);
 };
 
 export const setWheels = (chosenWheels) => {
   transientState.wheelsId = chosenWheels;
   console.log(transientState);
+};
+
+export const saveOrder = async () => {
+  const postOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(transientState),
+  };
+
+  const response = await fetch("http://localhost:8088/orders", postOptions);
+
+  const saveEvent = new CustomEvent("orderSaved");
+  document.dispatchEvent(saveEvent);
 };

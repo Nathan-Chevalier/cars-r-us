@@ -1,5 +1,5 @@
 {
-  "color": [
+  "colors": [
     {
       "id": 1,
       "description": "Silver",
@@ -21,7 +21,7 @@
       "price": 599.99
     }
   ],
-  "interior": [
+  "interiors": [
     {
       "id": 1,
       "description": "Beige Fabric",
@@ -43,7 +43,7 @@
       "price": 1099.99
     }
   ],
-  "tech": [
+  "packages": [
     {
       "id": 1,
       "description": "Basic Package (basic sound system)",
@@ -87,5 +87,30 @@
       "price": 949.99
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": 1,
+      "colorId": 1,
+      "interiorId": 2,
+      "packageId": 3,
+      "wheelsId": 4,
+      "timestamp": 0
+    },
+    {
+      "id": 2,
+      "colorId": 1,
+      "interiorId": 2,
+      "packageId": 1,
+      "wheelsId": 4,
+      "timestamp": 0
+    },
+    {
+      "id": 3,
+      "colorId": 4,
+      "interiorId": 3,
+      "packageId": 4,
+      "wheelsId": 4,
+      "timestamp": 0
+    }
+  ]
 }

@@ -1,5 +1,7 @@
 import { getColors } from "./color.js";
 import { getInteriors } from "./interior.js";
+import { getOrders } from "./orders.js";
+import { save } from "./save.js";
 import { getTech } from "./tech.js";
 import { getWheels } from "./wheels.js";
 
@@ -10,6 +12,8 @@ const render = async () => {
   const interiorHTML = await getInteriors();
   const techHTML = await getTech();
   const wheelHTML = await getWheels();
+  const saveHTML = await save();
+  const ordersHTML = await getOrders();
 
   const outputHTML = `
         <h1> CARS-R-US </h1>
@@ -26,8 +30,18 @@ const render = async () => {
             <section class="choices__wheels">
                 ${wheelHTML}
             </section>
+        </article>
+        <article class="order">
+            ${saveHTML}
+        </article>
+        <article class="ordersMade">
+            ${ordersHTML}
+        </article>
+        
 `;
   container.innerHTML = outputHTML;
 };
+
+document.addEventListener("orderSaved", render);
 
 render();

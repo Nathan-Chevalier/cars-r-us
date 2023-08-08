@@ -2,7 +2,7 @@ import { setColor } from "./transient.js";
 
 export const getColors = async () => {
   document.addEventListener("change", colorChange);
-  const response = await fetch("http://localhost:8088/color");
+  const response = await fetch("http://localhost:8088/colors");
   const colors = await response.json();
 
   let html = `<h3> Choose Your Color! </h3>
