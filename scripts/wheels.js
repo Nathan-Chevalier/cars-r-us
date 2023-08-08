@@ -1,4 +1,7 @@
+import { setWheels } from "./transient.js";
+
 export const getWheels = async () => {
+  document.addEventListener("change", wheelChange);
   const response = await fetch("http://localhost:8088/wheels");
   const wheels = await response.json();
 
@@ -11,4 +14,11 @@ export const getWheels = async () => {
   html += wheelArray.join("");
   html += `</select>`;
   return html;
+};
+
+const wheelChange = (changeEvent) => {
+  if (changeEvent.target.id === "wheel_choice") {
+    const converted = parseInt(changeEvent.target.value);
+    setWheels(converted);
+  }
 };
