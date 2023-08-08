@@ -1,9 +1,9 @@
-export const getMetals = async () => {
+export const getColors = async () => {
   const response = await fetch("http://localhost:8088/color");
-  colors = await response.json();
+  const colors = await response.json();
 
   let html = `<h3> Choose Your Color! </h3>
-                <select id="color_choice>
+                <select id="color_choice">
                     <option value="0"> Choose a color...</option>`;
   const colorArray = colors.map((color) => {
     return `<option value="${color.id}"> ${color.description} </option>`;
