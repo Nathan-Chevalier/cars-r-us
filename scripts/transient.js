@@ -4,7 +4,7 @@ const transientState = {
   interiorId: 0,
   packageId: 0,
   wheelsId: 0,
-  timestamp: 0,
+  typeId: 0,
 };
 
 export const setColor = (chosenColor) => {
@@ -24,6 +24,11 @@ export const setTech = (chosenTech) => {
 
 export const setWheels = (chosenWheels) => {
   transientState.wheelsId = chosenWheels;
+  console.log(transientState);
+};
+
+export const setType = (chosenType) => {
+  transientState.typeId = chosenType;
   console.log(transientState);
 };
 
