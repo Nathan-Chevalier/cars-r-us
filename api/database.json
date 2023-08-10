@@ -87,30 +87,22 @@
       "price": 949.99
     }
   ],
-  "orders": [
+  "types": [
     {
       "id": 1,
-      "colorId": 1,
-      "interiorId": 2,
-      "packageId": 3,
-      "wheelsId": 4,
-      "timestamp": 0
+      "description": "Car",
+      "multiplier": 1
     },
     {
       "id": 2,
-      "colorId": 1,
-      "interiorId": 2,
-      "packageId": 1,
-      "wheelsId": 4,
-      "timestamp": 0
+      "description": "SUV",
+      "multiplier": 1.5
     },
     {
       "id": 3,
-      "colorId": 4,
-      "interiorId": 3,
-      "packageId": 4,
-      "wheelsId": 4,
-      "timestamp": 0
+      "description": "Truck",
+      "multiplier": 2.25
     }
-  ]
+  ],
+  "orders": []
 }
