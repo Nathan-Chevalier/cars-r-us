@@ -106,20 +106,12 @@
   ],
   "orders": [
     {
-      "id": 1,
       "colorId": 1,
-      "interiorId": 1,
+      "interiorId": 3,
       "packageId": 1,
-      "wheelsId": 1,
-      "typeId": 1
-    },
-    {
-      "id": 2,
-      "colorId": 1,
-      "interiorId": 1,
-      "packageId": 1,
-      "wheelsId": 1,
-      "typeId": 3
+      "wheelsId": 2,
+      "typeId": 1,
+      "id": 1
     }
   ]
 }
